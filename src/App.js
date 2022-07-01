@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import TodoUi from './components/todoUI';
+import Card from './components/card';
 function App() {
 
 
@@ -21,19 +22,21 @@ function App() {
     }
   ];
 
-  const stateCopy = [...state];
-
-  const [task, setTaks] = useState(stateCopy);
+  const [task, setTaks] = useState(state);
 
   const addTaskHandler = (id, title) => {
     setTaks((prev) => {
       return[...prev, {id: id, title: title}]
     })
   }
+
+
+
   
   return (
     <div className="App">
       <TodoUi addTask={addTaskHandler} createEl={task} />
+      <Card cardItem={state} />
     </div>
   );
 }

@@ -19,15 +19,8 @@ const TodoUi = (props) => {
             return;
           }
 
-     
-
-          props.addTask(1, 2)
-          console.log(props.createEl)
+          props.addTask(Math.floor(Math.random() * 100), value)
           setValue('');
-
-          
-
-          
     }
 
 
