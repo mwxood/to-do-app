@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <TodoUi addTask={addTaskHandler} createEl={task} />
-      <Card cardItem={state} />
+      <Card cardItem={task} />
     </div>
   );
 }
