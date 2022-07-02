@@ -3,7 +3,7 @@ import { Container, Row, Col} from 'react-bootstrap';
 
 const Card = (props) => {
     const [active, setActive] = useState(false);
-    const currentEl = useRef();
+    const currentEl = useRef(null);
 
     const activeElementHandler = (event) => {
         setActive(!active);
@@ -11,13 +11,13 @@ const Card = (props) => {
     }
 
     useEffect(() => {
-        if(typeof currentEl.current === 'undefined') {
+        if(currentEl.current === null) {
             return;
         }
 
-        currentEl.current.className = active ? 'card col-md-6 active' : 'card col-md-6';
 
-        console.log(currentEl.current.className)
+        currentEl.current.className = active ? 'col card col-md-6 active' : 'col card col-md-6';
+
 
     })
 
